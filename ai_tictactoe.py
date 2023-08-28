@@ -168,7 +168,7 @@ def play_game():
     print("2 - Medium")
     print("3 - Hard")
     print("4 - Impossible")
-    
+
     while True:
         try:
             chosen_level = int(input("Enter the number corresponding to the difficulty level: "))
@@ -183,11 +183,17 @@ def play_game():
     for _ in range(9):
         if player_idx == 0:  # AI's turn
             if callable(difficulty_level):
-                ai_row, ai_col = difficulty_level(board, players[player_idx])
+                if chosen_level == 1:
+                    ai_row, ai_col = difficulty_level(board)
+                elif chosen_level == 2:
+                    ai_row, ai_col = difficulty_level(board, players[player_idx])
+                elif chosen_level == 3:
+                    ai_row, ai_col = difficulty_level(board, players[player_idx])
+                else:
+                    ai_row, ai_col = difficulty_level(board, players[player_idx])
             else:
                 print("Invalid difficulty level. Please choose from 1, 2, 3, or 4.")
                 return
-
             board[ai_row][ai_col] = players[player_idx]
             print(f"AI's turn (Player {players[player_idx]}):")
         else:  # User's turn
