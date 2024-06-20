@@ -1,29 +1,67 @@
-The AI implemented in this Tic Tac Toe game is based on the Minimax algorithm with alpha-beta pruning. The Minimax algorithm is a decision-making algorithm used in two-player games, where the goal is to find the optimal move for a player while assuming that the opponent also plays optimally. It is commonly used in games like Tic Tac Toe, Chess, and Connect Four.
+Certainly! Here is the README text that you can copy and paste:
 
-The AI has four difficulty levels: Easy, Medium, Hard, and Impossible. Each difficulty level corresponds to a different AI strategy for making moves on the game board.
+---
 
-1. Easy (ai_move_easy):
-   
-- The AI at this level makes random moves. It selects an empty position on the board randomly and places its mark (X or O) on that position.
+# Tic Tac Toe Game
 
-2. Medium (ai_move_medium):
+This repository contains two implementations of the classic Tic Tac Toe game: one is an AI-based command-line version, and the other is a GUI-based version.
 
-- The Medium-level AI attempts to play strategically by checking if it can win on the next move. If it finds a position where it can win, it places its mark there.
-- If there is no winning move for the AI, it checks if the opponent (human player) can win on their next move and tries to block them by placing its mark in the blocking position.
-- If neither a winning move nor a blocking move is possible, it falls back to making a random move.
+## Table of Contents
 
-3. Hard (ai_move_hard):
+- [Installation](#installation)
+- [Usage](#usage)
+- [Files](#files)
+- [Features](#features)
 
-- The Hard-level AI uses the Minimax algorithm to search for the best possible move at each turn.
-- It recursively explores all possible moves and their outcomes (by simulating both AI's and the opponent's moves) up to a certain depth, assuming that both players play optimally.
-- The AI assigns a score to each board configuration based on the outcome of the game (win, loss, or draw) and the depth of the search tree.
-- It chooses the move that leads to the highest score, indicating the best possible move for the AI.
-- This AI is more challenging to beat as it looks ahead several moves to anticipate the human player's moves and reacts accordingly.
+## Installation
 
-4. Impossible (ai_move_impossible):
+### Prerequisites
 
-- The Impossible-level AI uses the Minimax algorithm with alpha-beta pruning, an optimization to reduce the number of unnecessary branches in the search tree.
-- Similar to the Hard AI, it recursively searches for the best possible move, but alpha-beta pruning allows it to eliminate certain branches when it knows they will not lead to a better outcome.
-- This optimization significantly speeds up the search process and makes it even harder for the human player to win.
-- The Impossible AI is expected to play perfectly, making it nearly impossible for the human player to win.
+- Python 3.x
+- Tkinter (for GUI version)
 
+### Steps
+
+1. Clone the repository:
+    ```sh
+    git clone <repository-url>
+    cd tic-tac-toe
+    ```
+
+2. Install the required libraries:
+    ```sh
+    pip install -r requirements.txt
+    ```
+
+## Usage
+
+### Command-line Version
+
+Run the AI-based Tic Tac Toe game from the command line:
+```sh
+python ai_tictactoe.py
+```
+
+### GUI Version
+
+Run the GUI-based Tic Tac Toe game:
+```sh
+python tic_tac_toe_gui.py
+```
+
+## Files
+
+- `ai_tictactoe.py`: The AI-based command-line version of the Tic Tac Toe game.
+- `tic_tac_toe_gui.py`: The GUI-based version of the Tic Tac Toe game.
+
+## Features
+
+### AI-based Command-line Version
+
+- Play against an AI that uses minimax algorithm.
+- Simple text-based interface.
+
+### GUI Version
+
+- Interactive graphical user interface.
+- Play against another human player.
